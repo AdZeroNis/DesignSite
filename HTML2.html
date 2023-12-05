@@ -152,43 +152,6 @@
         x.style.opacity = 0;
         y.style.opacity = 1;
     }
-    var nationalCodeInput = document.getElementById("nationalCode");
-var nationalCode = nationalCodeInput.value;
-
-function validateNationalCode(code) {
-  // Check if the code is 10 digits long
-  if (code.length !== 10) {
-    return false;
-  }
-
-  // Check if the code consists of only digits
-  if (!/^\d+$/.test(code)) {
-    return false;
-  }
-
-  // Check if the code follows the national code validation algorithm
-  // You can implement your own validation algorithm here
-
-  return true;
-}
-
-// Add an event listener to the form submit button
-document.querySelector("form").addEventListener("submit", function (event) {
-  // Prevent the form from submitting by default
-  event.preventDefault();
-
-  // Get the value of the national code input field
-  var nationalCode = nationalCodeInput.value;
-
-  // Validate the national code
-  if (validateNationalCode(nationalCode)) {
-    // The national code is valid, submit the form
-    this.submit();
-  } else {
-    // The national code is invalid, display an error message
-    alert("Invalid national code. Please enter a valid national code.");
-  }
-});
 
 
 </script>
