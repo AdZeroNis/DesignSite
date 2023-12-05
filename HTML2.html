@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style2.css">
+    <title>Ludiflex | Login & Registration</title>
+</head>
+<body>
+ <div class="wrapper">
+
+<!----------------------------- Form box ----------------------------------->    
+    <div class="form-box">
+        
+        <!------------------- login form -------------------------->
+
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>حساب کاربری ندارید؟ <a href="#" onclick="register()">ثبت نام</a></span>
+                <header>ورود</header>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="نام کاربری یا ایمیل">
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="کلمه عبور">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="submit" class="submit" value="ثبت نام">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check"> مرا به خاطر بسپار</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">رمز عبور را فراموش کرده اید؟</a></label>
+                </div>
+            </div>
+        </div>
+
+        <!------------------- registration form -------------------------->
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>حساب کاربری دارید؟ <a href="#" onclick="login()">ورود</a></span>
+                <header>ثبت نام</header>
+            </div>
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="نام">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="نام خانوادگی">
+                    <i class="bx bx-user"></i>
+                </div>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="ایمیل">
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" placeholder="کلمه عبور">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" placeholder="شماره تلفن">
+                <i class="bx bx-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" id="nationalCode" placeholder="کد ملی">
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+                <div class="radio-buttons">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">مرد</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">زن</label>
+                </div>
+            </div>
+            <div class="input-box">
+                <select class="input-field">
+                    <option value="" disabled selected>مدرک تحصیلی خود را انتخاب کنید</option>
+                    <option value="high-school">دیپلم</option>
+                    <option value="bachelors">کارشناسی</option>
+                    <option value="masters">کارشناسی ارشد</option>
+                    <option value="phd">دکترا</option>
+                    <option value="phd">دیگر</option>
+                </select>
+                <i class="bx bx-graduation-cap"></i>
+            </div>
+            
+            
+            <div class="input-box">
+                <input type="submit" class="submit" value="ثبت نام">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check">مرا به خاطر بسپار</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">شرایط و ضوابط</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+
+
+<script>
+   
+   function myMenuFunction() {
+    var i = document.getElementById("navMenu");
+
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+ 
+</script>
+
+<script>
+
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+
+
+    function login() {
+        x.style.left = "4px";
+        y.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        x.style.opacity = 1;
+        y.style.opacity = 0;
+    }
+
+    function register() {
+        x.style.left = "-510px";
+        y.style.right = "5px";
+        a.className = "btn";
+        b.className += " white-btn";
+        x.style.opacity = 0;
+        y.style.opacity = 1;
+    }
+    var nationalCodeInput = document.getElementById("nationalCode");
+var nationalCode = nationalCodeInput.value;
+
+function validateNationalCode(code) {
+  // Check if the code is 10 digits long
+  if (code.length !== 10) {
+    return false;
+  }
+
+  // Check if the code consists of only digits
+  if (!/^\d+$/.test(code)) {
+    return false;
+  }
+
+  // Check if the code follows the national code validation algorithm
+  // You can implement your own validation algorithm here
+
+  return true;
+}
+
+// Add an event listener to the form submit button
+document.querySelector("form").addEventListener("submit", function (event) {
+  // Prevent the form from submitting by default
+  event.preventDefault();
+
+  // Get the value of the national code input field
+  var nationalCode = nationalCodeInput.value;
+
+  // Validate the national code
+  if (validateNationalCode(nationalCode)) {
+    // The national code is valid, submit the form
+    this.submit();
+  } else {
+    // The national code is invalid, display an error message
+    alert("Invalid national code. Please enter a valid national code.");
+  }
+});
+
+
+</script>
+
+</body>
+</html>
