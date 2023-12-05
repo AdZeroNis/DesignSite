@@ -30,7 +30,7 @@
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
-                <input type="submit" class="submit" value="ورود">
+                <input type="submit" class="submit" onclick="gotorelogin()" value="ورود">
             </div>
             <div class="two-col">
                 <div class="one">
@@ -98,7 +98,7 @@
             
             
             <div class="input-box">
-                <input type="submit" class="submit" value="ثبت نام" >
+                <input type="submit" class="submit" onclick="gotoregister()" value="ثبت نام" >
             </div>
             <div class="two-col">
                 <div class="one">
@@ -125,6 +125,12 @@
         i.className = "nav-menu";
     }
    }
+   function gotoregister(){
+    document.location="register.html";
+}
+function gotorelogin(){
+    document.location="login.html";
+}
  
 </script>
 
