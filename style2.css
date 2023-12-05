@@ -290,6 +290,7 @@ header{
     color: white;
     margin-bottom: 19px;
     flex-direction: row-reverse;
+    margin-right: 20px;
 }
 .input-box select {
     font-size: 15px;
