@@ -60,7 +60,11 @@
                 </div>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="ایمیل">
+                <div class="input-box">
+                    <input type="text" class="input-field" id="nationalCode" placeholder="کد ملی" pattern="^(?!(\d)\1{9})[0-9]{10}$">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                
                 <i class="bx bx-envelope"></i>
             </div>
             <div class="input-box">
