@@ -106,11 +106,12 @@ header{
     color: #fff;
     height: 50px;
     width: 100%;
-    padding: 0 10px 0 45px;
+    padding: 0 45px 0 10px;
     border: none;
     border-radius: 30px;
     outline: none;
     transition: .2s ease;
+    text-align: end;
 }
 .input-field:hover, .input-field:focus{
     background: rgba(255, 255, 255, 0.25);
@@ -121,7 +122,7 @@ header{
 .input-box i{
     position: relative;
     top: -35px;
-    left: 17px;
+    left: 93%;
     color: #fff;
 }
 .submit{
@@ -219,6 +220,7 @@ header{
     gap: 10px;
     color: white;
     margin-bottom: 19px;
+    flex-direction: row-reverse;
 }
 .input-box select {
     font-size: 15px;
