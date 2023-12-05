@@ -51,7 +51,7 @@
             </div>
             <div class="two-forms">
                 <div class="input-box">
-                    <input type="text" class="input-field" placeholder="نام">
+                    <input type="text" class="input-field" placeholder="نام"pattern="[A-Za-z]+" title="فقط حروف مجاز است">
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-box">
@@ -60,11 +60,7 @@
                 </div>
             </div>
             <div class="input-box">
-                <div class="input-box">
-                    <input type="text" class="input-field" id="nationalCode" placeholder="کد ملی" pattern="^(?!(\d)\1{9})[0-9]{10}$">
-                    <i class="bx bx-envelope"></i>
-                </div>
-                
+                <input type="text" class="input-field" placeholder="ایمیل">
                 <i class="bx bx-envelope"></i>
             </div>
             <div class="input-box">
@@ -76,7 +72,7 @@
                 <i class="bx bx-envelope"></i>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" id="nationalCode" placeholder="کد ملی">
+                <input type="text" class="input-field" id="nationalCode" placeholder="کد ملی" pattern="^(?!(\d)\1{9})[0-9]{10}$">
                 <i class="bx bx-user"></i>
             </div>
             <div class="input-box">
