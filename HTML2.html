@@ -30,7 +30,7 @@
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
-                <input type="submit" class="submit" onclick="gotorelogin()" value="ورود">
+                <input type="submit" class="submit" onclick="validateLoginForm()" value="ورود">
             </div>
             <div class="two-col">
                 <div class="one">
@@ -128,10 +128,19 @@
    function gotoregister(){
     document.location="register.html";
 }
-function gotorelogin(){
-    document.location="login.html";
+function validateLoginForm() {
+    var username = document.querySelector("#login .input-box input[type='text']").value;
+    var password = document.querySelector("#login .input-box input[type='password']").value;
+
+    if (username === "" || password === "") {
+        alert("لطفا همه فیلد هارو پرکنید");
+        return false;
+    } else {
+        window.location.href = "login.html";
+    }
 }
- 
+
+
 </script>
 
 <script>
