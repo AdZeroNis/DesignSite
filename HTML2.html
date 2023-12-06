@@ -64,16 +64,16 @@
                 <i class="bx bx-envelope"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="کلمه عبور"  required size="10" maxlength="20"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}"  required title="رمز باید بیشتر از هشت کرکتر باشد">
+                <input type="password" class="input-field" placeholder="کلمه عبور"  required >
             
                 <i class="bx bx-lock-alt"></i>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="شماره تلفن"  required pattern="0\d{10}" title="شماره تلفن باید 11 رقم باشد و با صفر شروع شود">
+                <input type="number" class="input-field" placeholder="شماره تلفن"  required >
                 <i class="bx bx-envelope"></i>
             </div>            
             <div class="input-box">
-                <input type="text" class="input-field" id="nationalCode" placeholder="کد ملی"  required pattern="^(?!(\d)\1{9})[0-9]{10}$"title="کد ملی صحیح وارد کنید">
+                <input type="number" class="input-field" id="nationalCode" placeholder="کد ملی"  required >
                 <i class="bx bx-user"></i>
             </div>
             <div class="input-box">
@@ -98,7 +98,8 @@
             
             
             <div class="input-box">
-                <input type="submit" class="submit" onclick="gotoregister()" value="ثبت نام" >
+                
+                <input type="submit" class="submit" onclick="validateRegisterForm()" value="ثبت نام">
             </div>
             <div class="two-col">
                 <div class="one">
@@ -139,6 +140,56 @@ function validateLoginForm() {
         window.location.href = "login.html";
     }
 }
+function validateRegisterForm() {
+    var username = document.querySelector("#register .input-box input[type='text']");
+    var password = document.querySelector("#register .input-box input[type='password']");
+    var nationalCode = document.querySelector("#register .input-box input[type='number']");
+    var phoneNumber = document.querySelector("#register .input-box input[type='number']");
+    var email = document.querySelector("#register .input-box input[type='email']");
+    var gender = document.querySelector("#register .input-box input[type='radio']:checked");
+
+    if (username && password && email && phoneNumber && nationalCode && gender) {
+        var usernameValue = username.value.trim();
+        var passwordValue = password.value.trim();
+        var emailValue = email.value.trim();
+        var phoneNumberValue = phoneNumber.value.trim();
+        var nationalCodeValue = nationalCode.value.trim();
+
+        // Validate patterns for individual fields
+        var usernamePattern = /^[A-Za-z]+$/;
+        var passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}/;
+        var nationalCodePattern = /^0*[0-9]{10}$/;
+        var phoneNumberPattern = /^0\d{10}$/;
+        var emailPattern =/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+        if (!usernamePattern.test(usernameValue)) {
+            alert("لطفا یک نام کاربری معتبر وارد کنید (فقط حروف مجاز هستند).");
+            return false;
+        }
+
+        if (!passwordPattern.test(passwordValue)) {
+            alert("لطفاً یک رمز عبور معتبر (حداقل 8 نویسه، از جمله حروف بزرگ، کوچک، عددی و نویسه‌های خاص) وارد کنید.");
+            return false;
+        }
+
+        if (!nationalCodePattern.test(nationalCodeValue)) {
+            alert("لطفا یک کد ملی معتبر وارد کنید.");
+            return false;
+        }
+
+        if (!phoneNumberPattern.test(phoneNumberValue)) {
+            alert("لطفاً یک شماره تلفن معتبر (11 رقم که با 0 شروع می شود) وارد کنید.");
+            return false;
+        }
+        if(!emailPattern.test(emailValue)){
+            alert("لطفا ایمیل معتبر وارد کنید")
+            return false;
+        }
+    } else {
+        alert("لطفا همه فیلد هارو پرکنید");
+        return false;
+    }
+    window.location.href = "register.html";
+}
 
 
 </script>
@@ -151,6 +202,7 @@ function validateLoginForm() {
     var y = document.getElementById("register");
 
 
+
     function login() {
         x.style.left = "4px";
         y.style.right = "-520px";
@@ -161,12 +213,17 @@ function validateLoginForm() {
     }
 
     function register() {
-        x.style.left = "-510px";
-        y.style.right = "5px";
-        a.className = "btn";
-        b.className += " white-btn";
-        x.style.opacity = 0;
-        y.style.opacity = 1;
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+    
+        if (x && y) {
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            a.className = "btn";
+            b.className += " white-btn";
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
     }
 
 
