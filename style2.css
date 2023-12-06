@@ -1,11 +1,80 @@
 /* POPPINS FONT */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@font-face {
+    font-family: IranSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum)_UltraLight.eot");
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum)_UltraLight.eot?#iefix")
+        format("embedded-opentype"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff2/IRANSansWeb(FaNum)_UltraLight.woff2")
+        format("woff2"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff/IRANSansWeb(FaNum)_UltraLight.woff")
+        format("woff"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/ttf/IRANSansWeb(FaNum)_UltraLight.ttf")
+        format("ttf");
+  }
+  @font-face {
+    font-family: IranSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum)_Light.eot");
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum)_Light.eot?#iefix")
+        format("embedded-opentype"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff2/IRANSansWeb(FaNum)_Light.woff2")
+        format("woff2"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff/IRANSansWeb(FaNum)_Light.woff")
+        format("woff"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/ttf/IRANSansWeb(FaNum)_Light.ttf")
+        format("ttf");
+  }
+  @font-face {
+    font-family: IranSans;
+    font-style: normal;
+    font-weight: 400;
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum).eot");
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum).eot?#iefix")
+        format("embedded-opentype"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff2/IRANSansWeb(FaNum).woff2")
+        format("woff2"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff/IRANSansWeb(FaNum).woff")
+        format("woff"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/ttf/IRANSansWeb(FaNum).ttf")
+        format("ttf");
+  }
+  @font-face {
+    font-family: IranSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum)_Medium.eot");
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum)_Medium.eot?#iefix")
+        format("embedded-opentype"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff2/IRANSansWeb(FaNum)_Medium.woff2")
+        format("woff2"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff/IRANSansWeb(FaNum)_Medium.woff")
+        format("woff"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/ttf/IRANSansWeb(FaNum)_Medium.ttf")
+        format("ttf");
+  }
+  @font-face {
+    font-family: IranSans;
+    font-style: normal;
+    font-weight: 700;
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum)_Bold.eot");
+    src: url("./Assets/Font/IRANSans/WebFonts/fonts/eot/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+        format("embedded-opentype"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff2/IRANSansWeb(FaNum)_Bold.woff2")
+        format("woff2"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/woff/IRANSansWeb(FaNum)_Bold.woff")
+        format("woff"),
+      url("./Assets/Font/IRANSans/WebFonts/fonts/ttf/IRANSansWeb(FaNum)_Bold.ttf")
+        format("ttf");
+  }
 
 *{  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "IranSans" !important;
 }
 body{
     background: url("image.jpg");
@@ -18,7 +87,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 110vh;
+    min-height: 100vh;
     background: rgba(39, 39, 39, 0.4);
 }
 
@@ -56,7 +125,7 @@ body{
     align-items: center;
     justify-content: center;
     width: 512px;
-    height: 673px;
+    height: 685px;
     overflow: hidden;
     z-index: 2;
 }
@@ -84,6 +153,7 @@ body{
     padding: 10px 0;
     display: flex;
     justify-content: center;
+    flex-direction: row-reverse;
 }
 .top span a{
     font-weight: 500;
@@ -106,11 +176,12 @@ header{
     color: #fff;
     height: 50px;
     width: 100%;
-    padding: 0 10px 0 45px;
+    padding: 0 45px 0 10px;
     border: none;
     border-radius: 30px;
     outline: none;
     transition: .2s ease;
+    text-align: end;
 }
 .input-field:hover, .input-field:focus{
     background: rgba(255, 255, 255, 0.25);
@@ -121,7 +192,7 @@ header{
 .input-box i{
     position: relative;
     top: -35px;
-    left: 17px;
+    left: 93%;
     color: #fff;
 }
 .submit{
@@ -219,6 +290,8 @@ header{
     gap: 10px;
     color: white;
     margin-bottom: 19px;
+    flex-direction: row-reverse;
+    margin-right: 20px;
 }
 .input-box select {
     font-size: 15px;
