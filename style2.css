@@ -310,3 +310,11 @@ header{
     background: #fff; 
 }
 
+.input-box input[type="number"]::-webkit-inner-spin-button,
+.input-box input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.input-box input[type="number"] {
+    -moz-appearance: textfield;
+}
