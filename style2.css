@@ -219,6 +219,10 @@ header{
     font-size: small;
     margin-top: 10px;
 }
+.invalid {
+    border: 2px solid red;
+  }
+  
 .two-col .one{
     display: flex;
     gap: 5px;

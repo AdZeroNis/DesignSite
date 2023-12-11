@@ -118,17 +118,22 @@
 
 
 <script>
-function validateLoginForm() {
-    var username = document.querySelector("#login .input-box input[type='text']").value;
-    var password = document.querySelector("#login .input-box input[type='password']").value;
+    function validateLoginForm() {
+        var username = document.querySelector("#login .input-box input[type='text']");
+        var password = document.querySelector("#login .input-box input[type='password']");
+      
+        if (username.value === "" || password.value === "") {
 
-    if (username === "" || password === "") {
-        alert("لطفا همه فیلد هارو پرکنید");
-        return false;
-    } else {
-        window.location.href = "login.html";
-    }
-}
+          username.classList.add("invalid");
+          password.classList.add("invalid");
+          return false;
+        } else {
+          username.classList.remove("invalid");
+          password.classList.remove("invalid");
+          window.location.href = "login.html";
+        }
+      }
+      
 function validateRegisterForm() {
     var username = document.querySelector("#register .input-box input[type='text']");
     var password = document.querySelector("#register .input-box input[type='password']");
@@ -167,6 +172,7 @@ function validateRegisterForm() {
 
         if (!phoneNumberPattern.test(phoneNumberValue)) {
             alert("لطفاً یک شماره تلفن معتبر (11 رقم که با 0 شروع می شود) وارد کنید.");
+            birder-button
             return false;
         }
         if(!emailPattern.test(emailValue)){
