@@ -76,7 +76,7 @@ function validateLoginForm() {
 
     if (isValid) {
         // Submit the form or perform further actions
-        window.location.href = "register.html";
+        window.location.href = "login.html";
     }
 
     return isValid;
