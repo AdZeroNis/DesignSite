@@ -3,14 +3,13 @@ function validateLoginForm() {
     var password = document.querySelector("#login .input-box input[type='password']");
   
     if (username.value === "" || password.value === "") {
-
       username.classList.add("invalid");
       password.classList.add("invalid");
       return false;
     } else {
       username.classList.remove("invalid");
       password.classList.remove("invalid");
-      window.location.href = "login.html";
+      window.location.href = "mainPage.html";
     }
   }
   
@@ -76,7 +75,7 @@ function validateLoginForm() {
 
     if (isValid) {
         // Submit the form or perform further actions
-        window.location.href = "login.html";
+        window.location.href = "mainPage.html";
     }
 
     return isValid;
