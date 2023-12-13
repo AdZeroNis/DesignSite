@@ -1,0 +1,46 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.MainPage {
+  display: flex;
+  background-color: #539b38;
+  width: 100%;
+}
+
+.MainPage .SideBar {
+  height: 100vh;
+  width: 15%;
+}
+
+.MainPage .leftSide {
+  width: 85%;
+}
+
+.MainPage .leftSide .Outlet {
+  border-radius: 0px 25px 0px 0px;
+  background: #fff;
+  padding: 25px 25px 0px 32px;
+  /* width: 100%; */
+  height: 94vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 812px) {
+  .MainPage .SideBar {
+    display: none;
+  }
+
+  .MainPage .leftSide {
+    width: 100%;
+  }
+
+  .MainPage .leftSide .Outlet {
+    border-radius: 0px 0px 0px 0px;
+    background: #fff;
+    padding: 16px 16px 0px 16px;
+    width: 100%;
+    height: 94vh;
+    overflow-y: auto;
+  }
+}
