@@ -1,0 +1,117 @@
+.SidBar {
+  margin-top: 76px;
+}
+
+.SidBar .topSideBar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.SidBar .topSideBar .imageUser {
+  width: 80px;
+  height: 80px;
+  border-radius: 25px;
+  margin-bottom: 11px;
+}
+
+.SidBar .topSideBar .imageUser img {
+  width: 90px;
+  height: 90px;
+  border-radius: 25px;
+}
+
+.SidBar .topSideBar .nameUser span {
+  color: #fff;
+  text-align: right;
+  font-family: "IRANSans", serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.SidBar .topSideBar .wellcome span {
+  color: #fff;
+  text-align: right;
+  font-family: "IRANSans", serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.SidBar ul {
+  margin-top: 69px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 34px;
+  margin-right: 30px;
+}
+
+.SidBar ul .item {
+  display: flex;
+  column-gap: 15px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.SidBar ul .afterClick {
+  border-radius: 0 5px 5px 0;
+  background: #63994f;
+  padding: 6px;
+}
+
+.SidBar ul .afterClick li {
+  font-weight: 500;
+}
+
+.SidBar ul li {
+  color: #fff;
+  text-align: right;
+  font-family: "IRANSans", serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@media (max-width: 1200px) {
+  .SidBar ul {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .SidBar ul li {
+    font-size: 12px;
+  }
+
+  .SidBar .topSideBar .nameUser span,
+  .SidBar .topSideBar .wellcome span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 991px) {
+  .SidBar ul .item {
+    column-gap: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .SidBar ul {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 865px) {
+  .SidBar ul .item {
+    column-gap: 5px;
+  }
+
+  .SidBar ul .afterClick {
+    padding: 5px;
+  }
+}
