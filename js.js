@@ -2,16 +2,26 @@ function validateLoginForm() {
     var username = document.querySelector("#login .input-box input[type='text']");
     var password = document.querySelector("#login .input-box input[type='password']");
   
-    if (username.value === "" || password.value === "") {
-      username.classList.add("invalid");
-      password.classList.add("invalid");
-      return false;
+    if (username.value === "") {
+        username.classList.add("invalid");
+        return false;
     } else {
-      username.classList.remove("invalid");
-      password.classList.remove("invalid");
-      window.location.href = "mainPage.html";
+        username.classList.remove("invalid");
     }
-  }
+    
+    var isValid = true; // Flag to track form validity
+    
+    if (password.value === "") {
+        password.classList.add("invalid");
+        isValid = false;
+    } else {
+        password.classList.remove("invalid");
+        window.location.href = "mainPage.html";
+    }
+    
+    return isValid;
+}
+
   
   function validateRegisterForm() {
     var username = document.querySelector("#register .input-box input[type='text']");
