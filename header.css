@@ -1,0 +1,22 @@
+.Header {
+  display: flex;
+  column-gap: 5px;
+  background-color: #539b38;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.Header .iamgeClock {
+  display: flex;
+}
+
+.Header span {
+  color: #fff;
+  text-align: center;
+  font-family: "IranSans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
