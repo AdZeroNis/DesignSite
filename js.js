@@ -24,18 +24,18 @@ function validateLoginForm() {
 
     return isValid;
 }
-window.addEventListener("DOMContentLoaded", function() {
-    var storedUsername = localStorage.getItem("username");
-    var storedPassword = localStorage.getItem("password");
+// window.addEventListener("DOMContentLoaded", function() {
+//     var storedUsername = localStorage.getItem("username");
+//     var storedPassword = localStorage.getItem("password");
 
-    if (storedUsername && storedPassword) {
-        var usernameInput = document.querySelector("#login .input-box input[type='text']");
-        var passwordInput = document.querySelector("#login .input-box input[type='password']");
+//     if (storedUsername && storedPassword) {
+//         var usernameInput = document.querySelector("#login .input-box input[type='text']");
+//         var passwordInput = document.querySelector("#login .input-box input[type='password']");
 
-        usernameInput.value = storedUsername;
-        passwordInput.value = storedPassword;
-    }
-});
+//         usernameInput.value = storedUsername;
+//         passwordInput.value = storedPassword;
+//     }
+// });
 
 
   
