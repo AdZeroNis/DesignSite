@@ -1,6 +1,6 @@
-*{
-    padding: 0%;
-    margin: 0%;
+* {
+  padding: 0%;
+  margin: 0%;
 }
 .MainPage {
   display: flex;
@@ -22,7 +22,7 @@
   background: #fff;
   padding: 25px 25px 0px 32px;
   /* width: 100%; */
-  height: 94vh;
+  height: 88.5vh;
   overflow-y: auto;
 }
 
@@ -42,5 +42,79 @@
     width: 100%;
     height: 94vh;
     overflow-y: auto;
+  }
+}
+
+.titleWrapper__ {
+  width: 100%;
+  color: var(--neutral-g, #141414);
+  text-align: right;
+
+  /* medium/M 16 */
+  font-family: IranSans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 15px;
+}
+
+.userCouner {
+  width: 100%;
+}
+
+.userCouner .spanUsercouner span {
+  color: #141414;
+  text-align: right;
+  font-family: "IranSans", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.userCouner .imageVector {
+  width: 259px;
+}
+
+.userCouner .imageVector img {
+  width: 100%;
+}
+
+.userCouner .columnUserCouner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 100%;
+}
+
+.userCouner .columnUserCouner .Banner {
+  margin-top: 30px;
+}
+
+.userCouner .columnUserCouner .Banner img {
+  width: 100%;
+}
+
+.userCouner .columnUserCouner .responsiveBanner {
+  display: none;
+}
+
+@media (max-width: 775px) {
+  .userCouner .columnUserCouner .Banner {
+    display: none;
+  }
+
+  .userCouner .columnUserCouner .responsiveBanner {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .userCouner .columnUserCouner .responsiveBanner img {
+    width: 100%;
   }
 }
