@@ -67,7 +67,7 @@ function validateLoginForm() {
         var passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}/;
         var nationalCodePattern = /^0*[0-9]{10}$/;
         var phoneNumberPattern = /^0\d{10}$/;
-        var emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+        var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
         if (!usernamePattern.test(usernameValue)) {
             username.classList.add("invalid");
