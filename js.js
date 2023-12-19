@@ -37,8 +37,6 @@ function validateLoginForm() {
 //     }
 // });
 
-
-  
   function validateRegisterForm() {
     var username = document.querySelector("#register .input-box input[type='text']");
     var password = document.querySelector("#register .input-box input[type='password']");
@@ -65,9 +63,9 @@ function validateLoginForm() {
         // Validate patterns for individual fields
         var usernamePattern = /^[A-Za-z]+$/;
         var passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}/;
-        var nationalCodePattern = /^0*[0-9]{10}$/;
         var phoneNumberPattern = /^0\d{10}$/;
         var emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+        var nationalCodePattern = /^0*[0-9]{10}$/;
 
         if (!usernamePattern.test(usernameValue)) {
             username.classList.add("invalid");
