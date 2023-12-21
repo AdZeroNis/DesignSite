@@ -252,6 +252,7 @@
   margin: 10px 0;
   border-radius: 10px;
   background: var(--neutral-g-6, #f1f1f1);
+  padding: 5px 0px 5px 0px;
 }
 
 @media (max-width: 575px) {
