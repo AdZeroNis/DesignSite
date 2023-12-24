@@ -2,40 +2,29 @@ function validateLoginForm() {
     var username = document.querySelector("#login .input-box input[type='text']");
     var password = document.querySelector("#login .input-box input[type='password']");
 
+    var isValid = true; // Flag to track form validity
+
+    // Reset previous invalid field styles
+    username.classList.remove("invalid");
+    password.classList.remove("invalid");
+
     if (username.value === "") {
         username.classList.add("invalid");
-        return false;
-    } else {
-        username.classList.remove("invalid");
+        isValid = false;
     }
-
-    var isValid = true; // Flag to track form validity
 
     if (password.value === "") {
         password.classList.add("invalid");
         isValid = false;
-    } else {
-        password.classList.remove("invalid");
-        // Store username and password in local storage
-        localStorage.setItem("username", username.value);
-        localStorage.setItem("password", password.value);
+    }
+
+    if (isValid) {
+        // Perform further actions or submit the form
         window.location.href = "mainPage.html";
     }
 
     return isValid;
 }
-// window.addEventListener("DOMContentLoaded", function() {
-//     var storedUsername = localStorage.getItem("username");
-//     var storedPassword = localStorage.getItem("password");
-
-//     if (storedUsername && storedPassword) {
-//         var usernameInput = document.querySelector("#login .input-box input[type='text']");
-//         var passwordInput = document.querySelector("#login .input-box input[type='password']");
-
-//         usernameInput.value = storedUsername;
-//         passwordInput.value = storedPassword;
-//     }
-// });
 
   function validateRegisterForm() {
     var username = document.querySelector("#register .input-box input[type='text']");
