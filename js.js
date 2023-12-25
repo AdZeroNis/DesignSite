@@ -27,14 +27,33 @@ function validateLoginForm() {
 
    return isValid;
 }
-
+function isValidNationalCode(nationalCode) {
+   var regex = /^[0-9]{10}$/;
+    if (!regex.test(nationalCode)) {
+        return false;
+    }
+ 
+    let sumnationalCodeNumber = 0;
+    for (let i = 0; i < 9; i++) {
+        sumnationalCodeNumber += parseInt(nationalCode[i]) * (10 - i);
+    }
+ 
+    var rem = sumnationalCodeNumber % 11;
+    var lastNationalCodeDigit = parseInt(nationalCode[9]);
+    if ((rem > 1 && (11 * rem === lastNationalCodeDigit)) || (rem <= 1 && rem === lastNationalCodeDigit)) {
+        return true;
+    }
+ 
+    return false;
+ }
+ 
 
 
   function validateRegisterForm() {
     var username = document.querySelector("#register .input-box input[type='text']");
     var password = document.querySelector("#register .input-box input[type='password']");
-    var nationalCode = document.querySelector("#register .input-box input[type='number']");
-    var phoneNumber = document.querySelector("#register .input-box input[type='number']");
+    var nationalCode = document.querySelector("#register .input-box input[id='nationalCode']");
+    var phoneNumber = document.querySelector("#register .input-box input[type='number']:not([id='nationalCode'])");    
     var email = document.querySelector("#register .input-box input[type='email']");
     var gender = document.querySelector("#register .input-box input[type='radio']:checked");
 
@@ -58,7 +77,7 @@ function validateLoginForm() {
         var passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}/;
         var phoneNumberPattern = /^0\d{10}$/;
         var emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-        var nationalCodePattern = /^0*[0-9]{10}$/;
+        // var nationalCodePattern = /^0*[0-9]{10}$/;
 
         if (!usernamePattern.test(usernameValue)) {
             username.classList.add("invalid");
@@ -70,7 +89,7 @@ function validateLoginForm() {
             isValid = false;
         }
 
-        if (!nationalCodePattern.test(nationalCodeValue)) {
+        if (!isValidNationalCode(nationalCodeValue)) {
             nationalCode.classList.add("invalid");
             isValid = false;
         }
