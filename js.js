@@ -1,45 +1,34 @@
 function validateLoginForm() {
-    var username = document.querySelector("#login .input-box input[type='text']");
-    var password = document.querySelector("#login .input-box input[type='password']");
- 
-    var isValid = true; // Flag to track form validity
- 
-    if (username.value === "") {
-        username.classList.add("invalid");
-        isValid = false;
-    } else {
-        username.classList.remove("invalid");
-    }
- 
-    if (password.value === "") {
-        password.classList.add("invalid");
-        isValid = false;
-    } else {
-        password.classList.remove("invalid");
-        // Store username and password in local storage
-        localStorage.setItem("username", username.value);
-        localStorage.setItem("password", password.value);
-    }
- 
-    if (isValid) {
-        window.location.href = "mainPage.html";
-    }
- 
-    return isValid;
- }
- 
-// window.addEventListener("DOMContentLoaded", function() {
-//     var storedUsername = localStorage.getItem("username");
-//     var storedPassword = localStorage.getItem("password");
+   var username = document.querySelector("#login .input-box input[type='text']");
+   var password = document.querySelector("#login .input-box input[type='password']");
 
-//     if (storedUsername && storedPassword) {
-//         var usernameInput = document.querySelector("#login .input-box input[type='text']");
-//         var passwordInput = document.querySelector("#login .input-box input[type='password']");
+   var isValid = true; // Flag to track form validity
 
-//         usernameInput.value = storedUsername;
-//         passwordInput.value = storedPassword;
-//     }
-// });
+   if (username.value === "") {
+       username.classList.add("invalid");
+       isValid = false;
+   } else {
+       username.classList.remove("invalid");
+   }
+
+   if (password.value === "") {
+       password.classList.add("invalid");
+       isValid = false;
+   } else {
+       password.classList.remove("invalid");
+       // Store username and password in local storage
+       localStorage.setItem("username", username.value);
+       localStorage.setItem("password", password.value);
+   }
+
+   if (isValid) {
+       window.location.href = "mainPage.html";
+   }
+
+   return isValid;
+}
+
+
 
   function validateRegisterForm() {
     var username = document.querySelector("#register .input-box input[type='text']");
