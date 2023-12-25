@@ -131,9 +131,8 @@ function login() {
 }
 
 function register() {
-    
-     var a = document.getElementById("loginBtn");
-     var b = document.getElementById("registerBtn");
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
     var x = document.getElementById("login");
     var y = document.getElementById("register");
 
@@ -146,3 +145,4 @@ function register() {
         y.style.opacity = 1;
     }
 }
+
