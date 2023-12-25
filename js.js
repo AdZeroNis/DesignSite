@@ -73,7 +73,7 @@ function isValidNationalCode(nationalCode) {
         var nationalCodeValue = nationalCode.value.trim();
 
         // Validate patterns for individual fields
-        var usernamePattern = /^[A-Za-z]+$/;
+        var usernamePattern = /^(?![0-9])[a-zA-Z0-9\u0600-\u06FF]{3,}$/;
         var passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}/;
         var phoneNumberPattern = /^0\d{10}$/;
         var emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
