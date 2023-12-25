@@ -116,8 +116,10 @@ function isValidNationalCode(nationalCode) {
 
     return isValid;
 }
-
 function login() {
+    
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
     var x = document.getElementById("login");
     var y = document.getElementById("register");
     x.style.left = "4px";
@@ -129,6 +131,9 @@ function login() {
 }
 
 function register() {
+    
+     var a = document.getElementById("loginBtn");
+     var b = document.getElementById("registerBtn");
     var x = document.getElementById("login");
     var y = document.getElementById("register");
 
