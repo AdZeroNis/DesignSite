@@ -106,7 +106,11 @@ function isValidNationalCode(nationalCode) {
     } else {
         
         isValid = false;
-        alert("همه فیلد ها رو پر کنید")
+        username.classList.add("invalid");
+        nationalCode.classList.add("invalid");
+        email.classList.add("invalid");
+        phoneNumber.classList.add("invalid");
+        password.classList.add("invalid");
     }
 
     if (isValid) {
