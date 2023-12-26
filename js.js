@@ -56,6 +56,7 @@ function isValidNationalCode(nationalCode) {
     var phoneNumber = document.querySelector("#register .input-box input[type='number']:not([id='nationalCode'])");    
     var email = document.querySelector("#register .input-box input[type='email']");
     var gender = document.querySelector("#register .input-box input[type='radio']:checked");
+    var educationLevel = document.querySelector("#register .input-box select");
 
     var isValid = true; // Flag to track form validity
 
@@ -71,13 +72,15 @@ function isValidNationalCode(nationalCode) {
         var emailValue = email.value.trim();
         var phoneNumberValue = phoneNumber.value.trim();
         var nationalCodeValue = nationalCode.value.trim();
+        var educationLevelValue = educationLevel.value.trim(); 
+        
 
         // Validate patterns for individual fields
         var usernamePattern = /^(?![0-9])[a-zA-Z0-9\u0600-\u06FF]{3,}$/;
         var passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}/;
         var phoneNumberPattern = /^0\d{10}$/;
         var emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
-        // var nationalCodePattern = /^0*[0-9]{10}$/;
+        var educationLevelPattern = /^(high-school|bachelors|masters|phd)$/;
 
         if (!usernamePattern.test(usernameValue)) {
             username.classList.add("invalid");
@@ -101,6 +104,10 @@ function isValidNationalCode(nationalCode) {
 
         if (!emailPattern.test(emailValue)) {
             email.classList.add("invalid");
+            isValid = false;
+        }
+        if (!educationLevelPattern.test(educationLevelValue)) { 
+            alert("مدرک تحصیلی را انتخاب کنید")
             isValid = false;
         }
     } else {
