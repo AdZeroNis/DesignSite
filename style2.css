@@ -323,6 +323,3 @@ header{
     -webkit-appearance: none;
     margin: 0;
 }
-.input-box input[type="number"] {
-    -moz-appearance: textfield;
-}
