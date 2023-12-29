@@ -348,3 +348,18 @@
     padding: 10px 5px;
   }
 }
+
+.chart{
+  display: flex;
+  justify-content: space-between;
+}
+
+#myLineChart{
+  width: 500px !important;
+  height: 500px !important;
+}
+
+#myBarChart{
+  width: 500px !important;
+  height: 500px !important;
+}
