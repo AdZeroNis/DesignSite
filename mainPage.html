@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./mainPage.css" />
     <link rel="stylesheet" href="./sidbar.css" />
     <link rel="stylesheet" href="./header.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js" />
     <title>MainPage</title>
   </head>
 
@@ -130,30 +131,63 @@
                   </li>
                   <li class="body-ul">
                     <span style="width: 55%">اول</span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
                   </li>
                   <li class="body-ul">
                     <span style="width: 55%">دوم</span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
                   </li>
                   <li class="body-ul">
                     <span style="width: 55%">سوم</span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
-                    <span style="width: 15%"><a target="_blank" href="#"><img src="./Assets/svg/barcode 1.svg" alt="/"></a></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
+                    <span style="width: 15%"
+                      ><a target="_blank" href="#"
+                        ><img src="./Assets/svg/barcode 1.svg" alt="/" /></a
+                    ></span>
                   </li>
                 </ul>
               </div>
+            </div>
+            <div class="chart">
+              <canvas id="myLineChart"></canvas>
+              <canvas id="myBarChart"></canvas>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="line-chart.js"></script>
+    <script src="barChart.js"></script>
     <script src="./mainPage.js"></script>
   </body>
 </html>
