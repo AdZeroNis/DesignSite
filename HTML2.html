@@ -50,28 +50,31 @@
                 <header>ثبت نام</header>
             </div>
             <!-- <div class="two-forms"> -->
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="نام کاربری"required  title="فقط حروف مجاز است">
+                <div class="input-box" style="position:relative;">
+                    <input type="text" class="input-field" placeholder="نام کاربری" required title="فقط حروف مجاز است">
                     <i class="bx bx-user"></i>
-                </div>
-            <div class="input-box">
+                    <span id="usernameError" class="error-message"></span>
+                 </div>
+                              
+            <div class="input-box" style="position:relative;">
                 <input type="email" class="input-field" placeholder="ایمیل" required title="لطفا ایمیل معتبر وارد کنید">
-
                 <i class="bx bx-envelope"></i>
+                <span id="emailError" class="error-message"></span>
             </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="کلمه عبور" required title="لطفا یک رمز عبور معتبر وارد کنید.(شامل حرف بزرگ،کوچک،عدد و عبارات خاص(@#&) و 8 یا بیشتر کرکتر باشد)">
-            
+            <div class="input-box" style="position:relative;">
+                <input type="password" class="input-field" placeholder="کلمه عبور" required title="لطفا یک رمز عبور معتبر وارد کنید.(شامل حرف بزرگ،کوچک،عدد و عبارات خاص(@#&) و از 8 یا بیشتر کرکتر باشد)">
                 <i class="bx bx-lock-alt"></i>
+                <span id="passwordError" class="error-message"></span>
             </div>
-            <div class="input-box">
+            <div class="input-box" style="position:relative;">
                 <input type="number" class="input-field" placeholder="شماره تلفن" required  title="لطفاً یک شماره تلفن معتبر (11 رقم که با 0 شروع می شود) وارد کنید">
-
                 <i class="bx bx-envelope"></i>
+                <span id="PhoneError" class="error-message"></span>
             </div>            
-            <div class="input-box">
+            <div class="input-box" style="position:relative;">
                 <input type="number" class="input-field" id="nationalCode" placeholder="کد ملی" required  title="لطفا یک کد ملی معتبر وارد کنید">
                 <i class="bx bx-user"></i>
+                <span id="CodeError" class="error-message"></span>
             </div>
             <div class="input-box">
                 <select class="input-field">
