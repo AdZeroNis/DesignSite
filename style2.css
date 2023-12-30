@@ -326,3 +326,10 @@ header{
 .input-box input[type="number"]{
     -moz-appearance: textfield;
 }
+.error-message {
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    z-index: 1000;
+ }
+ 
