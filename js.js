@@ -22,17 +22,33 @@ function validateLoginForm() {
  
     var isValid = true; // Flag to track form validity
  
-    if (username.value === "") {
+    var inputFields = document.querySelectorAll("#login .input-box input");
+    var errorMessages = document.querySelectorAll("#register .error-message");
+    inputFields.forEach(function (field) {
+        field.classList.remove("invalid");
+    });
+    errorMessages.forEach(function (message) {
+        message.textContent = "";
+    });
+
+      if (username && password ) {
+         var usernameValue = username.value.trim();
+         var passwordValue = password.value.trim();
+         var usernamePattern = /^(?![0-9])[a-zA-Z0-9\u0600-\u06FF]{3,}$/;
+         var passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}/;
+      }
+      if (!usernamePattern.test(usernameValue)) {
         username.classList.add("invalid");
+        document.getElementById('usernameError').textContent = 'لطفا یک نام کاربری وارد کنید';
         isValid = false;
-    } else {
-        username.classList.remove("invalid");
-    }
- 
-    if (password.value === "") {
+      }
+
+    if (!passwordPattern.test(passwordValue)) {
         password.classList.add("invalid");
+        document.getElementById('passwordError').textContent = 'لطفا رمز مناسب انتخاب کنید';
         isValid = false;
-    } else {
+      }
+      else {
         password.classList.remove("invalid");
         // Store username and password in local storage
         localStorage.setItem("username", username.value);
