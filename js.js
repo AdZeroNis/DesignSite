@@ -1,3 +1,23 @@
+
+var registerForm = document.querySelector("#register");
+var inputFields = document.querySelectorAll("#register .input-box input");
+
+// Attach event listener to the form
+registerForm.addEventListener('submit', validateRegisterForm);
+
+// Attach event listener to the input fields
+inputFields.forEach(function (field) {
+  field.addEventListener('input', function () {
+      // Remove the invalid class if the field is not empty
+      if (this.value !== '') {
+          this.classList.remove("invalid");
+      } else {
+          // Add the invalid class if the field is empty
+          this.classList.add("invalid");
+      }
+  });
+});
+
 function validateLoginForm() {
     var username = document.querySelector("#login .input-box input[type='text']");
     var password = document.querySelector("#login .input-box input[type='password']");
@@ -49,22 +69,26 @@ function validateLoginForm() {
   
  
  
-   function validateRegisterForm() {
-     var username = document.querySelector("#register .input-box input[type='text']");
-     var password = document.querySelector("#register .input-box input[type='password']");
-     var nationalCode = document.querySelector("#register .input-box input[id='nationalCode']");
-     var phoneNumber = document.querySelector("#register .input-box input[type='number']:not([id='nationalCode'])");    
-     var email = document.querySelector("#register .input-box input[type='email']");
-     var gender = document.querySelector("#register .input-box input[type='radio']:checked");
-     var educationLevel = document.querySelector("#register .input-box select");
- 
+  function validateRegisterForm() {
+    var username = document.querySelector("#register .input-box input[type='text']");
+    var password = document.querySelector("#register .input-box input[type='password']");
+    var nationalCode = document.querySelector("#register .input-box input[id='nationalCode']");
+    var phoneNumber = document.querySelector("#register .input-box input[type='number']:not([id='nationalCode'])"); 
+    var email = document.querySelector("#register .input-box input[type='email']");
+    var gender = document.querySelector("#register .input-box input[type='radio']:checked");
+    var educationLevel = document.querySelector("#register .input-box select");
      var isValid = true; // Flag to track form validity
  
      // Reset previous invalid field styles
      var inputFields = document.querySelectorAll("#register .input-box input");
+     var errorMessages = document.querySelectorAll("#register .error-message");
      inputFields.forEach(function (field) {
          field.classList.remove("invalid");
      });
+     errorMessages.forEach(function (message) {
+         message.textContent = "";
+     });
+     
  
      if (username && password && email && phoneNumber && nationalCode && gender) {
          var usernameValue = username.value.trim();
