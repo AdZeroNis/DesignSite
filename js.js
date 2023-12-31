@@ -76,7 +76,10 @@ function validateLoginForm() {
     var gender = document.querySelector("#register .input-box input[type='radio']:checked");
     var educationLevel = document.querySelector("#register .input-box select");
      var isValid = true; // Flag to track form validity
- 
+     if (!gender) {
+        document.getElementById('genderError').innerText = 'لطفا جنسیت خود را انتخاب کنید';
+        isValid = false;
+    }
      // Reset previous invalid field styles
      var inputFields = document.querySelectorAll("#register .input-box input");
      var errorMessages = document.querySelectorAll("#register .error-message");
@@ -88,7 +91,7 @@ function validateLoginForm() {
      });
      
  
-     if (username && password && email && phoneNumber && nationalCode && gender) {
+     if (educationLevel && password && email && phoneNumber && nationalCode && username) {
          var usernameValue = username.value.trim();
          var passwordValue = password.value.trim();
          var emailValue = email.value.trim();
@@ -103,6 +106,10 @@ function validateLoginForm() {
          var phoneNumberPattern = /^0\d{10}$/;
          var emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
          var educationLevelPattern = /^(high-school|bachelors|masters|phd)$/;
+           if (!educationLevelPattern.test(educationLevelValue)) { 
+             alert("مدرک تحصیلی را انتخاب کنید")
+             isValid = false;
+         }
  
          if (!usernamePattern.test(usernameValue)) {
              username.classList.add("invalid");
@@ -131,10 +138,6 @@ function validateLoginForm() {
          if (!emailPattern.test(emailValue)) {
              email.classList.add("invalid");
              document.getElementById('emailError').textContent = 'لطفا ایمیل درست وارد کنید';
-             isValid = false;
-         }
-         if (!educationLevelPattern.test(educationLevelValue)) { 
-             alert("مدرک تحصیلی را انتخاب کنید")
              isValid = false;
          }
          
