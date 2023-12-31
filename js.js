@@ -1,4 +1,3 @@
-
 var registerForm = document.querySelector("#register");
 var inputFields = document.querySelectorAll("#register .input-box input");
 
@@ -17,7 +16,6 @@ inputFields.forEach(function (field) {
       }
   });
 });
-
 function validateLoginForm() {
     var username = document.querySelector("#login .input-box input[type='text']");
     var password = document.querySelector("#login .input-box input[type='password']");
