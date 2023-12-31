@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,114 +9,125 @@
     <link rel="stylesheet" href="style2.css">
     <title>Ludiflex | Login & Registration</title>
 </head>
+
 <body>
- <div class="wrapper">
+    <div class="wrapper">
 
-<!----------------------------- Form box ----------------------------------->    
-    <div class="form-box">
-        
-        <!------------------- login form -------------------------->
+        <!----------------------------- Form box ----------------------------------->
+        <div class="form-box">
 
-        <div class="login-container" id="login">
-            <div class="top">
-                <span>حساب کاربری ندارید؟ <a href="#" onclick="register()">ثبت نام</a></span>
-                <header>ورود</header>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" placeholder="نام کاربری یا ایمیل" required>
-                <i class="bx bx-user"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="کلمه عبور" required>
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-                <input type="submit" class="submit" onclick="validateLoginForm()" value="ورود">
-            </div>
-            <div class="two-col">
-                <div class="one">
-                    <!-- <input type="checkbox" id="login-check">
+            <!------------------- login form -------------------------->
+
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>حساب کاربری ندارید؟ <a href="#" onclick="register()">ثبت نام</a></span>
+                    <header>ورود</header>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="نام کاربری یا ایمیل" required>
+                    <i class="bx bx-user"></i>
+                    <span id="usernameError" class="error-message"></span>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="کلمه عبور" required>
+                    <i class="bx bx-lock-alt"></i>
+                    <span id="passwordError" class="error-message"></span>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" onclick="validateLoginForm()" value="ورود">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <!-- <input type="checkbox" id="login-check">
                     <label for="login-check"> مرا به خاطر بسپار</label> -->
-                </div>
-                <div class="two">
-                    <label><a href="#">رمز عبور را فراموش کرده اید؟</a></label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">رمز عبور را فراموش کرده اید؟</a></label>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!------------------- registration form -------------------------->
-        <div class="register-container" id="register">
-            <div class="top">
-                <span>حساب کاربری دارید؟ <a href="#" onclick="login()">ورود</a></span>
-                <header>ثبت نام</header>
-            </div>
-            <!-- <div class="two-forms"> -->
+            <!------------------- registration form -------------------------->
+            <div class="register-container" id="register">
+                <div class="top">
+                    <span>حساب کاربری دارید؟ <a href="#" onclick="login()">ورود</a></span>
+                    <header>ثبت نام</header>
+                </div>
+                <!-- <div class="two-forms"> -->
                 <div class="input-box" style="position:relative;">
                     <input type="text" class="input-field" placeholder="نام کاربری" required title="فقط حروف مجاز است">
                     <i class="bx bx-user"></i>
                     <span id="usernameError" class="error-message"></span>
-                 </div>
-                              
-            <div class="input-box" style="position:relative;">
-                <input type="email" class="input-field" placeholder="ایمیل" required title="لطفا ایمیل معتبر وارد کنید">
-                <i class="bx bx-envelope"></i>
-                <span id="emailError" class="error-message"></span>
-            </div>
-            <div class="input-box" style="position:relative;">
-                <input type="password" class="input-field" placeholder="کلمه عبور" required title="لطفا یک رمز عبور معتبر وارد کنید.(شامل حرف بزرگ،کوچک،عدد و عبارات خاص(@#&) و از 8 یا بیشتر کرکتر باشد)">
-                <i class="bx bx-lock-alt"></i>
-                <span id="passwordError" class="error-message"></span>
-            </div>
-            <div class="input-box" style="position:relative;">
-                <input type="number" class="input-field" placeholder="شماره تلفن" required  title="لطفاً یک شماره تلفن معتبر (11 رقم که با 0 شروع می شود) وارد کنید">
-                <i class="bx bx-envelope"></i>
-                <span id="PhoneError" class="error-message"></span>
-            </div>            
-            <div class="input-box" style="position:relative;">
-                <input type="number" class="input-field" id="nationalCode" placeholder="کد ملی" required  title="لطفا یک کد ملی معتبر وارد کنید">
-                <i class="bx bx-user"></i>
-                <span id="CodeError" class="error-message"></span>
-            </div>
-            <div class="input-box">
-                <select class="input-field">
-                    <option value="" disabled selected>مدرک تحصیلی خود را انتخاب کنید</option>
-                    <option value="high-school">دیپلم</option>
-                    <option value="bachelors">کارشناسی</option>
-                    <option value="masters">کارشناسی ارشد</option>
-                    <option value="phd">دکترا</option>
-                    <option value="phd">دیگر</option>
-                </select>
-                <i class="bx bx-graduation-cap"></i>
-            </div>
-            <div class="input-box">
-                <div class="radio-buttons">
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">مرد</label>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">زن</label>
                 </div>
-            </div>
-            
-            
-            <div class="input-box">
-                
-                <input type="submit" class="submit" onclick="validateRegisterForm()" value="ثبت نام">
-            </div>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="register-check">
-                    <label for="register-check">مرا به خاطر بسپار</label>
+
+                <div class="input-box" style="position:relative;">
+                    <input type="email" class="input-field" placeholder="ایمیل" required
+                        title="لطفا ایمیل معتبر وارد کنید">
+                    <i class="bx bx-envelope"></i>
+                    <span id="emailError" class="error-message"></span>
                 </div>
-                <div class="two">
-                    <label><a href="#">شرایط و ضوابط</a></label>
+                <div class="input-box" style="position:relative;">
+                    <input type="password" class="input-field" placeholder="کلمه عبور" required
+                        title="لطفا یک رمز عبور معتبر وارد کنید.(شامل حرف بزرگ،کوچک،عدد و عبارات خاص(@#&) و از 8 یا بیشتر کرکتر باشد)">
+                    <i class="bx bx-lock-alt"></i>
+                    <span id="passwordError" class="error-message"></span>
+                </div>
+                <div class="input-box" style="position:relative;">
+                    <input type="number" class="input-field" placeholder="شماره تلفن" required
+                        title="لطفاً یک شماره تلفن معتبر (11 رقم که با 0 شروع می شود) وارد کنید">
+                    <i class="bx bx-envelope"></i>
+                    <span id="PhoneError" class="error-message"></span>
+                </div>
+                <div class="input-box" style="position:relative;">
+                    <input type="number" class="input-field" id="nationalCode" placeholder="کد ملی" required
+                        title="لطفا یک کد ملی معتبر وارد کنید">
+                    <i class="bx bx-user"></i>
+                    <span id="CodeError" class="error-message"></span>
+                </div>
+                <div class="input-box">
+                    <select class="input-field">
+                        <option value="" disabled selected>مدرک تحصیلی خود را انتخاب کنید</option>
+                        <option value="high-school">دیپلم</option>
+                        <option value="bachelors">کارشناسی</option>
+                        <option value="masters">کارشناسی ارشد</option>
+                        <option value="phd">دکترا</option>
+                        <option value="phd">دیگر</option>
+                        <div id="educError"></div>
+                    </select>
+                    <i class="bx bx-graduation-cap"></i>
+                </div>
+                <div class="input-box">
+                    <div class="radio-buttons">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">مرد</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">زن</label>
+                        <div id="genderError"></div>
+
+                    </div>
+                </div>
+
+
+                <div class="input-box">
+
+                    <input type="submit" class="submit" onclick="validateRegisterForm()" value="ثبت نام">
+                </div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check">مرا به خاطر بسپار</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#">شرایط و ضوابط</a></label>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>   
 
 
-<script src="./js.js"></script>
+    <script src="./js.js"></script>
 
 </body>
+
 </html>
