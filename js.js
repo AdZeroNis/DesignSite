@@ -216,10 +216,13 @@ function validateLoginForm() {
             isValid = false;
         }
       }
-    if (!gender) {
-        document.getElementById('genderError').innerText = 'لطفا جنسیت خود را انتخاب کنید';
+      var gender = document.querySelector("#register .input-box input[type='radio']:checked");
+      if (!gender) {
+        // Add the invalid class and display an error message
+        var errorContainer = document.getElementById('genderError');
+        errorContainer.textContent = 'لطفا جنسیت خود را انتخاب کنید';
         isValid = false;
-    }
+      }
  
     if (isValid) {
         // Submit the form or perform further actions
