@@ -223,6 +223,15 @@ function validateLoginForm() {
         errorContainer.textContent = 'لطفا جنسیت خود را انتخاب کنید';
         isValid = false;
       }
+      var educationLevel = document.querySelector("#register .input-box select");
+
+       
+      if (educationLevel.value === "") {
+ // No option is selected, add the invalid class and display an error message
+       var errorContainer = document.getElementById('educError');
+       alert('لطفا مدرک تحصیلی خود را انتخاب کنید')
+       isValid = false;
+}
  
     if (isValid) {
         // Submit the form or perform further actions
