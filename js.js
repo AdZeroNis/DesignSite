@@ -56,6 +56,7 @@ function validateLoginForm() {
                errorMessage.style.color = "white";
                errorMessage.classList.add('error-message');
                username.parentElement.appendChild(errorMessage);
+
            }
            isValid = false;
        }
@@ -157,7 +158,7 @@ function validateLoginForm() {
             var existingErrorMessage = password.nextElementSibling;
             if (!existingErrorMessage || !existingErrorMessage.classList.contains('error-message')) {
                 var errorMessage = document.createElement('span');
-                errorMessage.textContent = 'لطفا یک نام کاربری وارد کنید';
+                errorMessage.textContent = 'لطفا یک نام کاربری مناسب وارد کنید';
                 errorMessage.style.color = "white";
                 errorMessage.classList.add('error-message');
                 password.parentElement.appendChild(errorMessage);
@@ -173,7 +174,7 @@ function validateLoginForm() {
             var existingErrorMessage = nationalCode.nextElementSibling;
             if (!existingErrorMessage || !existingErrorMessage.classList.contains('error-message')) {
                 var errorMessage = document.createElement('span');
-                errorMessage.textContent = 'لطفا یک نام کاربری وارد کنید';
+                errorMessage.textContent = 'لطفا کد ملی معتبر وارد کنید';
                 errorMessage.style.color = "white";
                 errorMessage.classList.add('error-message');
                 nationalCode.parentElement.appendChild(errorMessage);
@@ -190,7 +191,7 @@ function validateLoginForm() {
             var existingErrorMessage = phoneNumber.nextElementSibling;
             if (!existingErrorMessage || !existingErrorMessage.classList.contains('error-message')) {
                 var errorMessage = document.createElement('span');
-                errorMessage.textContent = 'لطفا یک نام کاربری وارد کنید';
+                errorMessage.textContent = 'لطفا شماره تلفن معتبر وارد کنید';
                 errorMessage.style.color = "white";
                 errorMessage.classList.add('error-message');
                 phoneNumber.parentElement.appendChild(errorMessage);
@@ -207,7 +208,7 @@ function validateLoginForm() {
             var existingErrorMessage = email.nextElementSibling;
             if (!existingErrorMessage || !existingErrorMessage.classList.contains('error-message')) {
                 var errorMessage = document.createElement('span');
-                errorMessage.textContent = 'لطفا یک نام کاربری وارد کنید';
+                errorMessage.textContent = 'لطفا یک ایمیل وارد کنید';
                 errorMessage.style.color = "white";
                 errorMessage.classList.add('error-message');
                 email.parentElement.appendChild(errorMessage);
