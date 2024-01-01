@@ -30,6 +30,7 @@ loginInputFields.forEach(function (field) {
 });
 
 function validateLoginForm() {
+    event.preventDefault();
    var username = document.querySelector("#login .input-box input[type='text']");
    var password = document.querySelector("#login .input-box input[type='password']");
  
@@ -78,19 +79,16 @@ function validateLoginForm() {
            isValid = false;
        }
      }
-     else {
-       password.classList.remove("invalid");
+     if (isValid) {
+        password.classList.remove("invalid");
        // Store username and password in local storage
        localStorage.setItem("username", username.value);
        localStorage.setItem("password", password.value);
-   }
- 
-   if (isValid) {
-       window.location.href = "mainPage.html";
-   }
- 
-   return isValid;
- }
+       window.location.href="mainPage.html";
+    }
+  
+    return isValid;
+  } 
  function isValidNationalCode(nationalCode) {
     var regex = /^[0-9]{10}$/;
     if (!regex.test(nationalCode)) {
