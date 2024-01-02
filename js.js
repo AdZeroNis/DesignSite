@@ -25,11 +25,12 @@ loginInputFields.forEach(function (field) {
     // Remove the invalid class if the field is not empty
     if (this.value !== '') {
         this.classList.remove("invalid");
+        
     }
  });
 });
 
-function validateLoginForm() {
+function validateLoginForm(event) {
     event.preventDefault();
    var username = document.querySelector("#login .input-box input[type='text']");
    var password = document.querySelector("#login .input-box input[type='password']");
@@ -37,13 +38,13 @@ function validateLoginForm() {
    var isValid = true; // Flag to track form validity
  
    var inputFields = document.querySelectorAll("#login .input-box input");
-   var errorMessages = document.querySelectorAll("#login.error-message");
-   inputFields.forEach(function (field) {
-       field.classList.remove("invalid");
-   });
-   errorMessages.forEach(function (message) {
-       message.textContent = "";
-   });
+   var errorMessages = document.querySelectorAll("#login .error-message");
+ inputFields.forEach(function (field) {
+        field.classList.remove("invalid");
+    });
+    errorMessages.forEach(function (message) {
+        message.textContent = "";
+    });
 
    if (username) {
        var usernameValue = username.value.trim();
