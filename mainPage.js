@@ -109,4 +109,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+function ComingBack(){
+  window.location.href = "mainPage.html";
+}
+function Profile(){
+  window.location.href = "indexProfile.html";
+}
+
 
