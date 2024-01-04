@@ -72,7 +72,7 @@ function validateLoginForm(event) {
            var existingErrorMessage = password.nextElementSibling;
            if (!existingErrorMessage || !existingErrorMessage.classList.contains('error-message')) {
                var errorMessage = document.createElement('span');
-               errorMessage.textContent = 'لطفا یک نام کاربری وارد کنید';
+               errorMessage.textContent = 'لطفا یک رمز وارد کنید';
                errorMessage.style.color = "white";
                errorMessage.classList.add('error-message');
                password.parentElement.appendChild(errorMessage);
